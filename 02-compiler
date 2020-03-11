@@ -1,0 +1,10 @@
+c//exp0.c
+char *tokens -> 抓取你所輸入的數字
+int tokenIdx -> 計數你字串的字所在的位置
+char ch -> 將你的字串抓出來(一個一個抓)
+char next -> 回傳你的字並將tokenIdx+1
+int isNext -> 用在加號或減號之後
+int nextTemp -> tokenIdx+1
+
+
+
