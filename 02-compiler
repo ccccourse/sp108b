@@ -1,10 +1,36 @@
-c//exp0.c
+//exp0.c
 char *tokens -> 抓取你所輸入的數字
-int tokenIdx -> 計數你字串的字所在的位置
+int tokenIdx -> 計數你字串的字所在的位置(從0開始)
 char ch -> 將你的字串抓出來(一個一個抓)
 char next -> 回傳你的字並將tokenIdx+1
 int isNext -> 用在加號或減號之後
-int nextTemp -> tokenIdx+1
-
-
-
+int nextTemp -> tokenIdx+1(第一次從0開始)
+E()相當於集大成 將F()以及其他的運算結果整合起來之後再printf出來
+F() {
+  int f;                            //
+  char c = ch();                    //抓取自串中的字
+  if (isdigit(c)) {                 //判斷是否為0~9之間的數字
+    next(); // skip c               //
+    f = nextTemp();                 //
+    printf("t%d=%c\n", f, c);       //
+  } else if (c=='(') { // '(' E ')' //如果有括號的情況才需從此開始
+    next();                         //
+    f = E();                        //
+    assert(ch()==')');              //
+    next();                         //
+  } else {                          //
+    error("F = (E) | Number fail!");//
+  }
+  return f; 
+}
+E() {                                       //
+  int i1 = F();                             //
+  while (isNext("+-")) {                    //
+    char op=next();                         //
+    int i2 = F();                           //
+    int i = nextTemp();                     //
+    printf("t%d=t%d%ct%d\n", i, i1, op, i2);//
+    i1 = i;                                 //
+  }
+  return i1;
+}
