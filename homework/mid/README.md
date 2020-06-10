@@ -1,5 +1,13 @@
 # MID
+```
+我的編譯器擴充自老師的課堂範例， if, goto, for 語法則是新加入的。
+if,goto 是我 100% 原創的。
+for 有參考 http://ccckmit.wikidot.com/cd:for
+參考老師的範例之後，我讀懂了，於是完全靠自己寫出 if, goto, for 擴充部分。
+對這個編譯器原始碼我完全可以理解。
 
+在程式中寫一個STS() 是給for()的判斷句
+```
 ## for test mode
 ```
 PS C:\Users\USER\Desktop\系統程式\sp108b\homework\mid> ./compiler test/for.c -ir -run 
